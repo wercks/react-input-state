@@ -1,11 +1,6 @@
 # React Input State
 
-Input and select state management, content validator, sanitizer and content replacer
-
-## Motivation
-
-Tailwind users or users that want to work with native &lt;input&gt; and &lt;select&gt; without using larges third party libraries
-for a simple thing.
+&lt;input&gt; and &lt;select&gt; state management, content validator, sanitizer and content replacer
 
 ## Installing
 
