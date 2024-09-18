@@ -1,0 +1,15 @@
+{
+  "name": "react-input-state",
+  "version": "1.0.0",
+  "description": "HTML input|select state manager, validation and utilities",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "dependencies": {
+    "bignumber.js": "^9.1.2", 
+    "validator": "^13.12.0"
+  },
+  "author": {
+    "name": "Wercks de Oliveira",
+    "email": "wercks@live.com"
+  }
+}
