@@ -4,7 +4,7 @@ Input and select state management, content validator, sanitizer and content repl
 
 ## Motivation
 
-Good for Tailwind users or users that want to work with native &lt;input&gt; and &lt;select&gt; without using larges third party libraries
+Tailwind users or users that want to work with native &lt;input&gt; and &lt;select&gt; without using larges third party libraries
 for a simple thing.
 
 ## Installing
