@@ -1,9 +1,10 @@
 {
   "name": "react-input-state",
-  "version": "1.0.0",
-  "description": "HTML input|select state manager, validation and utilities",
+  "version": "1.0.2",
+  "description": "HTML input|select state management, validation and utilities",
   "types": "index.d.ts",
   "main": "index.js",
+  "repository": "https://github.com/wercks/react-input-state",
   "dependencies": {
     "bignumber.js": "^9.1.2", 
     "validator": "^13.12.0"
@@ -11,5 +12,11 @@
   "author": {
     "name": "Wercks de Oliveira",
     "email": "wercks@live.com"
-  }
+  },
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "tailwind",
+    "tailwindcss"
+  ]
 }
