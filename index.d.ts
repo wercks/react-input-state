@@ -59,8 +59,6 @@ type Item = {
 }
 
 declare class ReactInputState {
-    private state: Mixed
-
     /**
      * Return key/value pair from input and select elements
      */
@@ -69,17 +67,7 @@ declare class ReactInputState {
     /**
      * Return key/value pair from input and select elements with -private in name
      */
-    get private(): Mixed
-
-    private validation: FormValidationState
-
-    private fields: {
-        [name: string]: Item
-    }
-
-    private reloader: Reloader
-
-    private config: Config | undefined
+    get privateValues(): Mixed
 
     constructor(reloader: Reloader, config?: Config)
 
@@ -94,34 +82,10 @@ declare class ReactInputState {
      */
     value(name: string): any
 
-    private addField(data: {
-        field: Field
-        type: 'select' | 'input'
-        root: Element
-    }): void
-
-    private addEvents(): void
-
-    private runActions(): void
-
-    private addTouchEvents(item: Item): void
-
-    private addChangeEvent(item: Item): void
-
-    private mask(name: string): void
-
-    private remove(name: string): void
-
-    private transform(name: string): void
-
     /**
      * Validates value from input
      */
     validate(name: string): void
-
-    private displayError(): void
-
-    private validateAll(): void
 
     /**
      * Check if all values is valid based on validators set
@@ -129,8 +93,6 @@ declare class ReactInputState {
     get isValid(): boolean
 
     setValue(name: string, value: any): void
-
-    init(root: Element): void
 }
 
 export default function useInputState(

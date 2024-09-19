@@ -216,7 +216,7 @@ myStateName.privateValues
 
 ## data-ignore
 
-If you don't want this input/select to be managed by this lib
+If you don't want the input/select to be managed by this lib
 
 ```html
 <select name="any" data-ignore="true"></select>
@@ -273,7 +273,7 @@ const MyApp = () => {
 const MyApp = () => {
     // Second hook argument
     const [state, reloader] = useInputState(myRootElement, {
-            initialState?: {}
+            initialState: {}
             /**
              * zero = forever
              */
