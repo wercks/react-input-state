@@ -1,6 +1,6 @@
 {
   "name": "react-input-state",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "HTML input|select state management, validation and utilities",
   "types": "index.d.ts",
   "main": "index.js",
