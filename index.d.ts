@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { DependencyList } from 'react'
+
 interface FormValidationState {
     [key: string]: {
         [key: string]: boolean
@@ -36,6 +37,15 @@ interface Config {
     onValidate?: (name: string, isValid: boolean, validationType: string) => any
 
     inputInvalidClasses?: string
+
+    virtualState?: Virtual
+}
+
+declare type Virtual = {
+    [key: string]: {
+        private: boolean
+        value: any
+    }
 }
 
 type Field = HTMLInputElement | HTMLSelectElement
@@ -69,6 +79,11 @@ declare class ReactInputState {
      */
     get privateValues(): Mixed
 
+    /**
+     * Return key/value pair from virtual values
+     */
+    get virtualValues(): Mixed
+
     constructor(reloader: Reloader, config?: Config)
 
     /**
@@ -78,9 +93,25 @@ declare class ReactInputState {
     setInitialState(initialState: Mixed): void
 
     /**
+     *
+     * Set initial virtual values
+     */
+    setVirtualState(virtualState: Virtual): void
+
+    /**
      * Get individual value from input or select
      */
     value(name: string): any
+
+    /**
+     * Get virtual individual value
+     */
+    virtual(name: string): any
+
+    /**
+     * Delete virtual value
+     */
+    deleteVirtual(name: string, reloadComponent?: boolean): void
 
     /**
      * Validates value from input
@@ -93,9 +124,22 @@ declare class ReactInputState {
     get isValid(): boolean
 
     setValue(name: string, value: any): void
+
+    setVirtual(name: string, value: any, isPrivate?: boolean): void
+
+    /**
+     * Manually disable submit button
+     */
+    disableSubmitButton(): void
+
+    /**
+     * Manually enabled submit button
+     */
+    enableSubmitButton(): void
 }
 
 export default function useInputState(
     ref: React.MutableRefObject<Element> | React.RefObject<Element>,
-    config?: Config
+    config?: Config,
+    deps?: DependencyList
 ): [ReactInputState, Reloader]

@@ -1,6 +1,6 @@
 # React Input State
 
-&lt;input&gt; and &lt;select&gt; state management, content validator, sanitizer and content replacer
+&lt;input&gt; and &lt;select&gt; state management, content validator, sanitizer, content replacer and virtual data
 
 ## Installing
 
@@ -19,7 +19,11 @@ npm i react-input-state
 ## **useInputState** hook
 
 Set the element root containing the inputs, selects and optionally
-set the submit element ref for disable it when user types invalid data
+set the submit element ref for disable it when user types invalid data and optionally dependency list
+
+```text
+useInputState(ref, config, deps)
+```
 
 ```tsx
 import useInputState from 'react-input-state'
@@ -28,13 +32,15 @@ const MyApp = () => {
     const myRootElement = createRef<HTMLDivElement>()
     const submitButton = createRef<HTMLButtonElement>()
 
-    // second argument is optional
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    // second and third argument is optional
     const [state] = useInputState(myRootElement, {
         initialState: {},
         submitButton,
         onValidate: (name, isValid, validationType) => {}
         inputInvalidClasses: string
-    })
+    }, [isLoading])
 
     const handleSubmit = () => {
         if (!state.isValid) {
@@ -267,6 +273,37 @@ const MyApp = () => {
 }
 ```
 
+# Virtual Values
+
+Use virtual values when you need to set values that does't have fields for them
+
+```typescript
+setVirtual(name: string, value: any, private: boolean = false)
+```
+
+Set third argument to true (private) if you don't want to get the value in **state.values**
+
+## Virtual individual values
+
+```typescript
+const value = state.virtual('my-value')
+```
+
+## Setting virtual state after initialization
+
+```typescript
+state.setVirtualState({})
+```
+
+## Delete a value from virtual state
+
+```typescript
+state.deleteVirtual('my-name', true)
+```
+
+The second argument is optional, it determines if your want the component to be reloaded,
+default value is `false`
+
 ## Configuration properties
 
 ```typescript
@@ -285,11 +322,6 @@ const MyApp = () => {
             submitButton:
 
             /**
-             * boolean, disable submit button if content is invalid
-             */
-            disableSubmitButton: boolean
-
-            /**
              * Called when validating a field
              */
             onValidate: (name, isValid, validationType) => {}
@@ -297,7 +329,9 @@ const MyApp = () => {
             /**
              * Add classes to input when it contains invalid data
              */
-            inputInvalidClasses: '...'
+            inputInvalidClasses: '...',
+
+             virtualState: {}
     })
 
     return null
