@@ -1,3 +1,10 @@
+#### 1.1.1
+
+-   21/09/24
+-   Added textarea support
+-   [BUGFIX] Correct handling checkbox and radio
+-   [BUGFIX] Execute actions on init
+
 #### 1.1.0
 
 -   20/09/24

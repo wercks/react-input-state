@@ -1,7 +1,7 @@
 {
   "name": "react-input-state",
-  "version": "1.1.0",
-  "description": "HTML input|select state management, validation and utilities",
+  "version": "1.1.1",
+  "description": "HTML input|select|textarea state management, mask, validation and utilities",
   "types": "index.d.ts",
   "main": "index.js",
   "repository": "https://github.com/wercks/react-input-state",

@@ -48,7 +48,7 @@ declare type Virtual = {
     }
 }
 
-type Field = HTMLInputElement | HTMLSelectElement
+type Field = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
 
 export const ReactInputStateConfig: Config
 

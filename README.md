@@ -1,6 +1,6 @@
 # React Input State
 
-&lt;input&gt; and &lt;select&gt; state management, content validator, sanitizer, content replacer and virtual data
+&lt;input&gt;, &lt;textarea&gt; and &lt;select&gt; state management, content validator, sanitizer, mask, content replacer and virtual data
 
 ## Installing
 
@@ -18,8 +18,9 @@ npm i react-input-state
 
 ## **useInputState** hook
 
-Set the element root containing the inputs, selects and optionally
-set the submit element ref for disable it when user types invalid data and optionally dependency list
+-   Set the element root containing the inputs, selects and textarea
+-   **(optional)** Set the submit element ref (button or other), it will be disabled if invalid data has been detected
+-   **(optional)** Dependency list
 
 ```text
 useInputState(ref, config, deps)
@@ -36,10 +37,12 @@ const MyApp = () => {
 
     // second and third argument is optional
     const [state] = useInputState(myRootElement, {
+
         initialState: {},
         submitButton,
         onValidate: (name, isValid, validationType) => {}
-        inputInvalidClasses: string
+        inputInvalidClasses: ''
+
     }, [isLoading])
 
     const handleSubmit = () => {
@@ -111,13 +114,15 @@ const MyApp = () => {
 
        />
 
-       {/* You can use select elements as well */}
+       {/* You can work with select and textarea elements as well */}
 
        <select name="my-select" required>
             <option value="">Choose</option>
             <option value="any">Text</option>
             <option value="any2">Text2</option>
        </select>
+
+       <textarea name="my-textarea" required></textarea>
 
        <button ref={submitButton} onClick={handleSubmit}>Submit</button>
     </div>
