@@ -1,3 +1,9 @@
+#### 1.1.2
+
+-   22/09/24
+-   [BUGFIX] Fixed input value not set when call state.setValue
+-   [REMOVED] inputInvalidClasses has been removed use invalidClasses instead
+
 #### 1.1.1
 
 -   21/09/24

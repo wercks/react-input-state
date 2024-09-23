@@ -19,7 +19,7 @@ npm i react-input-state
 ## **useInputState** hook
 
 -   Set the element root containing the inputs, selects and textarea
--   **(optional)** Set the submit element ref (button or other), it will be disabled if invalid data has been detected
+-   **(optional)** Set the submit element ref (button or other), it will be disabled if invalid data has be detected
 -   **(optional)** Dependency list
 
 ```text
@@ -41,7 +41,7 @@ const MyApp = () => {
         initialState: {},
         submitButton,
         onValidate: (name, isValid, validationType) => {}
-        inputInvalidClasses: ''
+        invalidClasses: ''
 
     }, [isLoading])
 
@@ -237,7 +237,7 @@ If you don't want the input/select to be managed by this lib
 ## Setting value programmatically
 
 ```typescript
-state.setValue('my-input-or-select-name', anyData)
+state.setValue('name', anyData)
 ```
 
 **caution:** If the input or select does not exists, an Error will be thrown,
@@ -246,7 +246,7 @@ you can surround it by try / catch
 ## Individual values
 
 ```typescript
-const value = state.value('input-or-select-name')
+const value = state.value('name')
 ```
 
 ## Setting initialState after initialization
@@ -334,7 +334,7 @@ const MyApp = () => {
             /**
              * Add classes to input when it contains invalid data
              */
-            inputInvalidClasses: '...',
+            invalidClasses: '...',
 
              virtualState: {}
     })
@@ -349,6 +349,6 @@ const MyApp = () => {
 import { ReactInputStateConfig } from 'react-input-state'
 
 ReactInputStateConfig.closeErrorMessageMilliseconds = 3000
-ReactInputStateConfig.inputInvalidClasses = '...'
+ReactInputStateConfig.invalidClasses = '...'
 //....
 ```

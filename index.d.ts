@@ -36,7 +36,7 @@ interface Config {
      */
     onValidate?: (name: string, isValid: boolean, validationType: string) => any
 
-    inputInvalidClasses?: string
+    invalidClasses?: string
 
     virtualState?: Virtual
 }
