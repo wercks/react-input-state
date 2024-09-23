@@ -1,3 +1,8 @@
+#### 1.1.3
+
+-   22/09/24
+-   [BUGFIX] Fixed submitButton does not enabling
+
 #### 1.1.2
 
 -   22/09/24
