@@ -166,4 +166,4 @@ function mask(value, pattern, type, options, autoCapitalize) {
     }
     return multimasker(String(value), pattern, {});
 }
-export { mask, unMask };
+export { mask, unMask, currencyMasker };

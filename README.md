@@ -1,6 +1,6 @@
 # React Input State
 
-&lt;input&gt;, &lt;textarea&gt; and &lt;select&gt; state management, content validator, sanitizer, mask, content replacer and virtual data
+&lt;input&gt;, &lt;textarea&gt; and &lt;select&gt; state management, content validator, sanitizer, mask, currency, content replacer and virtual data
 
 ## Installing
 
@@ -166,6 +166,21 @@ lowercase - uppercase - titlecase - trim - urlsafe
 -   9 - accept digit
 -   A - accept alpha
 -   S - accept alphanumeric
+
+# Currency (data-currency)
+
+```html
+<input type="text" name="any" data-currency="true" />
+```
+
+See below all currency data optional attributes and its default values
+
+```text
+data-prefix=""
+data-decimal-separator=","
+data-group-separator="."
+data-precision="2"
+```
 
 ## data-remove
 
