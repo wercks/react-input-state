@@ -1,3 +1,9 @@
+#### 1.1.4
+
+-   24/09/24
+-   Performance highly improved
+-   [BUGFIX] Fixed error element incorrect position
+
 #### 1.1.3
 
 -   22/09/24

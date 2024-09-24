@@ -61,8 +61,6 @@ type Item = {
     actions: Mixed
     field: Field
     errorElement: HTMLElement | null
-    lastErrorElementPosition: string
-    lastErrorElementTop: string
     touched: boolean
     regexValidation: string
     conditional: Mixed
