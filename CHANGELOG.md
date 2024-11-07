@@ -1,3 +1,9 @@
+#### 1.1.7
+
+-   07/11/24
+-   Removed throw error if the form field not exists
+-   Added setVirtualIfNotExists
+
 #### 1.1.5
 
 -   24/09/24

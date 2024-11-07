@@ -22,6 +22,11 @@ interface Config {
     closeErrorMessageMilliseconds?: number
 
     /**
+     * Set some initial state value as virtual if there is no form field
+     */
+    setVirtualIfNotExists?: boolean
+
+    /**
      * Reference
      */
     submitButton?: React.MutableRefObject<Element> | React.RefObject<Element>
